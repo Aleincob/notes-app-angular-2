@@ -1,0 +1,6 @@
+<ul>
+  <p *ngIf="names.length === 0">Aún no hay notas</p>
+  <li  *ngFor="let name of names; index as i">
+    {{name}} <button (click)="removeNote(i)">X</button>
+  </li>
+</ul>
