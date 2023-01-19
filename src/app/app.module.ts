@@ -7,6 +7,7 @@ import { AddNoteComponent} from './components/add-note/add-note.component';
 import {BoxNoteComponent} from './components/box-note/box-note.component';
 import { AddNoteService } from './add-note.service';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule,
   ],
   bootstrap: [AppComponent]
 })
