@@ -2,7 +2,7 @@
   <p *ngIf="names.length === 0">Aún no hay notas</p>
   <li *ngFor="let name of names; index as i">
     {{name}}
-    <button (click)="removeNote(i)" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+    <button (click)="removeNote(i)" mat-icon-button>
       <mat-icon>close</mat-icon>
     </button>
     <button mat-button>Basic</button>
