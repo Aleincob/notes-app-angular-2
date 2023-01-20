@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddNoteComponent} from './components/add-note/add-note.component';
-import {BoxNoteComponent} from './components/box-note/box-note.component';
-import { AddNoteService } from './add-note.service';
+import { AddNoteComponent } from './components/add-note/add-note.component';
+import { BoxNoteComponent } from './components/box-note/box-note.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
   ],
   bootstrap: [AppComponent]
 })
