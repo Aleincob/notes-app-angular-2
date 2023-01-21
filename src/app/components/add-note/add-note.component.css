@@ -1,0 +1,9 @@
+.mat-form-field {
+    margin-top: 50px;
+}
+
+.add-note-btn {
+    margin-left: 20px;
+    position: relative;
+    top: -8px;
+}

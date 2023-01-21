@@ -10,10 +10,13 @@ import { AddNoteService } from '../../add-note.service';
 export class AddNoteComponent implements OnInit {
   note: string = '';
 
-  constructor(private addNoteService: AddNoteService) {}
+  constructor(private addNoteService: AddNoteService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
   addNote() {
-    this.addNoteService.addNote(this.note);
+    this.addNoteService.addNote({
+      title: 'Title',
+      text: this.note
+    });
   }
 }

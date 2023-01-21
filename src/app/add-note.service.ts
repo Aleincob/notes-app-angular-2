@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
+import { Note } from './models/note';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AddNoteService {
-  notes: string[] = [];
+  notes: Note[] = [];
 
-  constructor() {}
+  constructor() { }
 
-  addNote(newNote: string) {
+  addNote(newNote: Note) {
     this.notes.push(newNote);
     console.log('recibido', newNote);
+
   }
   getNotes() {
     return this.notes;

@@ -1,0 +1,6 @@
+<form [formGroup]="noteForm" (ngSubmit)="addNote()">
+    <input type="text" formControlName="title">
+    <input type="text" formControlName="text">
+    <button type="submit">Add</button>
+    <button routerLink="/">Cancel</button>
+</form>
