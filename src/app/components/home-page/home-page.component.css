@@ -1,0 +1,26 @@
+.home-page-btn-add {
+    width: 400px;
+    height: 150px;
+    color: #7dc2f1;
+    background: transparent;
+    padding: 16px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 6px;
+    border-color: #7dc2f1;
+    position: relative;
+    bottom: -10px;
+    margin-top: 406px
+}
+
+.home-page-btn-add:hover {
+    background-color: #7dc2f1;
+    color: white;
+}

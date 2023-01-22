@@ -1,6 +1,18 @@
-<form [formGroup]="noteForm" (ngSubmit)="addNote()">
-    <input type="text" formControlName="title">
-    <input type="text" formControlName="text">
-    <button type="submit">Add</button>
-    <button routerLink="/">Cancel</button>
+<form class="add-note-page-form" [formGroup]="noteForm" (ngSubmit)="addNote()">
+    <!-- <input type="text" formControlName="title"> -->
+    <!-- <input type="text" formControlName="text"> -->
+    <div class="add-note-page-btns">
+        <mat-form-field class="example-full-width">
+            <mat-label>Title</mat-label>
+            <input matInput type="text" formControlName="title">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Note</mat-label>
+            <input matInput type="text" formControlName="text">
+        </mat-form-field>
+    </div>
+    <!-- <button type="submit">Add</button> -->
+    <button mat-stroked-button color="primary">Add Note</button>
+    <button mat-stroked-button color="warn" routerLink="/">Cancel</button>
+    <!-- <button routerLink="/">Cancel</button> -->
 </form>

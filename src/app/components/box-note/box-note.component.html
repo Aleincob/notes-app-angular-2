@@ -1,7 +1,8 @@
 <ul class="box-note-txt">
   <p *ngIf="notes.length === 0">Aún no hay notas</p>
   <li class="box-note-li" *ngFor="let note of notes; index as i">
-    {{note.text}}
+    <mat-card-title>{{note.title}}</mat-card-title>
+    <p>{{note.text}}</p>
     <button mat-icon-button color="warn" (click)="removeNote(i)" mat-icon-button>
       <mat-icon>close</mat-icon>
     </button>
