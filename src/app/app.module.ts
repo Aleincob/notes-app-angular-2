@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -18,6 +18,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { AddNotePageComponent } from './components/add-note-page/add-note-page.component';
 import { StoreModule } from '@ngrx/store';
 import { notesReducer } from './store/note.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { notesReducer } from './store/note.reducer';
     MatDividerModule,
     ReactiveFormsModule,
     StoreModule.forRoot({ notes: notesReducer }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Note } from 'src/app/models/note';
 
-import { AddNoteService } from '../../add-note.service';
+import { Note } from 'src/app/models/note';
+import { Store } from '@ngrx/store';
+import { getNote, removeNote } from 'src/app/store/note.actions';
+
+
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-box-note',
@@ -9,19 +13,16 @@ import { AddNoteService } from '../../add-note.service';
   styleUrls: ['./box-note.component.css'],
 })
 export class BoxNoteComponent implements OnInit {
-  notes: Note[] = this.addNoteService.getNotes();
-  query: string = '';
   notesFiltered: Note[] = [];
-  constructor(private addNoteService: AddNoteService) { }
+  notes$: Observable<Note[]>
+  constructor(private store: Store<{ notes: Note[] }>) {
+    this.notes$ = store.select('notes');
+  }
 
   ngOnInit() {
-    this.search()
   }
   removeNote(index: number) {
-    this.addNoteService.removeNote(index);
-  }
-  search() {
-    this.notesFiltered = this.notes.filter((note) => note.title.includes(this.query))
+    this.store.dispatch(removeNote({ index }))
   }
 }
 

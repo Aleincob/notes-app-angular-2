@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { AddNoteService } from 'src/app/add-note.service';
 import { Note } from 'src/app/models/note';
 import { Router } from '@angular/router';
+
+import { Store } from '@ngrx/store';
+import { addNote } from 'src/app/store/note.actions';
 
 @Component({
   selector: 'app-add-note-page',
@@ -15,7 +17,7 @@ export class AddNotePageComponent {
     text: new FormControl('', [Validators.required])
   })
 
-  constructor(private formBuilder: FormBuilder, private addNoteService: AddNoteService, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private store: Store) { }
 
 
   addNote() {
@@ -23,7 +25,7 @@ export class AddNotePageComponent {
       title: this.noteForm.value.title ?? '',
       text: this.noteForm.value.text ?? '',
     };
-    this.addNoteService.addNote(newNote)
+    this.store.dispatch(addNote({ newNote }))
     this.router.navigateByUrl('/')
   }
 }
