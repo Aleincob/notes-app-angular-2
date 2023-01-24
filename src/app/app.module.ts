@@ -16,6 +16,7 @@ import { MatCardModule } from '@angular/material/card';
 import { HeaderComponent } from './components/header/header.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { AddNotePageComponent } from './components/add-note-page/add-note-page.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AddNotePageComponent } from './components/add-note-page/add-note-page.c
     MatCardModule,
     MatDividerModule,
     ReactiveFormsModule,
+    StoreModule.forRoot({}, {}),
   ],
   bootstrap: [AppComponent]
 })
