@@ -17,6 +17,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { AddNotePageComponent } from './components/add-note-page/add-note-page.component';
 import { StoreModule } from '@ngrx/store';
+import { notesReducer } from './store/note.reducer';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { StoreModule } from '@ngrx/store';
     MatCardModule,
     MatDividerModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({ notes: notesReducer }),
   ],
   bootstrap: [AppComponent]
 })
